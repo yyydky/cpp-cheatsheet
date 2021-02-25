@@ -407,6 +407,10 @@ s1.substr(m, n);          // Substring of size n starting at s1[m]
 s1.c_str();               // Convert to const char*
 s1 = to_string(12.05);    // Converts number to string
 getline(cin, s);          // Read line ending in '\n'
+// loop through each char in string
+for (char const &c: s) {
+  std::cout << c << ' ';
+}
 ```
 
 ## `vector` (Variable sized array/stack with built in memory allocation)
