@@ -354,6 +354,8 @@ exp(x); log(x); log10(x);   // e to the x, log base e, log base 10
 pow(x, y); sqrt(x);         // x to the y, square root
 ceil(x); floor(x);          // Round up or down (as a double)
 fabs(x); fmod(x, y);        // Absolute value, x mod y
+double res = double(expenditure[mid1] + expenditure[mid2])/2; //keep floating point
+5/2 = 2 // int division returns floor
 ```
 
 ## `assert.h`, `cassert` (Debugging Aid)
@@ -411,6 +413,11 @@ getline(cin, s);          // Read line ending in '\n'
 for (char const &c: s) {
   std::cout << c << ' ';
 }
+
+vector<int> freq(26, 0);
+    for(auto c: a){
+        freq[c-'a']+=1;
+    }
 ```
 
 ## `vector` (Variable sized array/stack with built in memory allocation)
@@ -433,6 +440,11 @@ for (vector<int>::iterator p=a.begin(); p!=a.end(); ++p)
 vector<int> b(a.begin(), a.end());  // b is copy of a
 vector<T> c(n, x);        // c[0]..c[n-1] init to x
 T d[10]; vector<T> e(d, d+10);      // e is initialized from d
+assert(!v.empty());
+v.erase(v.begin());
+bool myfunction (int i,int j) { return (i<j); }
+sort(prices.begin(), prices.end(), myfunction);
+
 ```
 
 ## `deque` (Array stack queue)
@@ -444,7 +456,7 @@ T d[10]; vector<T> e(d, d+10);      // e is initialized from d
 a.push_front(x);          // Puts x at a[0], shifts elements toward back
 a.pop_front();            // Removes a[0], shifts toward front
 ```
-
+ 
 ## `utility` (pair)
 
 ```cpp
@@ -474,6 +486,13 @@ a["hello"] = 3;           // Add or replace element a["hello"]
 for (auto& p:a)
     cout << p.first << p.second;  // Prints hello, 3
 a.size();                 // 1
+
+//find
+std::unordered_map<std::string,double>::const_iterator got = mymap.find (input);
+  if ( got == mymap.end() )
+    std::cout << "not found";
+  else
+    std::cout << got->first << " is " << got->second;
 ```
 
 ## `set` (store unique elements - usually implemented as binary search trees - avg. time complexity: O(log n))
